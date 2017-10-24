@@ -26,6 +26,7 @@ class ViewController: UIViewController, Math {
     @IBOutlet weak var inputLabel: UILabel!
     var res: String = ""
     var new: Bool = true
+    var done: Bool = false
     var decimal: Bool = false
     var nums: [String] = []
     var op = ""
@@ -44,42 +45,54 @@ class ViewController: UIViewController, Math {
         updateInputLabel()
     }
     
-    @IBAction func performAction(_ button: UIButton) {
-        let text: String = button.currentTitle!
-        switch(text) {
-            case "*", "/", "+", "-", "Count", "Avg", "Mod", "Fact":
-                new = true
-                decimal = false
-                op = text
-                printResult()
-            case "=":
-                if nums.count > 0 && nums[nums.count - 1].last == "." {
-                    nums.append(nums.removeLast() + "0")
-                    decimal = false
-                }
-                printResult()
-            case "Clear":
-                clearInput()
-                clearResult()
-            default:
-                if new {
-                    if text == "." {
-                        nums.append("0" + text)
-                    }
-                    else {
-                        nums.append(text)
-                    }
-                    new = false
-                }
-                else {
-                    if (text == "." && !decimal) || text != "." {
-                        nums.append(nums.removeLast() + text)
-                    }
-                }
-                if text == "." {
-                    decimal = true
-                }
+    @IBAction func clickEquals(_ button: UIButton) {
+        if nums.count > 0 && nums[nums.count - 1].last == "." {
+            nums.append(nums.removeLast() + "0")
+            decimal = false
+            updateInputLabel()
         }
+        printResult()
+        done = true
+    }
+    
+    @IBAction func clickClear(_ button: UIButton) {
+        clearInput()
+        clearResult()
+        done = false
+    }
+    
+    @IBAction func clickNum(_ button: UIButton) {
+        if done {
+            clickClear(button)
+        }
+        let text: String = button.currentTitle!
+        if new {
+            if text == "." {
+                nums.append("0" + text)
+            }
+            else {
+                nums.append(text)
+            }
+            new = false
+        }
+        else {
+            if (text == "." && !decimal) || text != "." {
+                nums.append(nums.removeLast() + text)
+            }
+        }
+        if text == "." {
+            decimal = true
+        }
+        updateInputLabel()
+    }
+    
+    @IBAction func clickOperator(_ button: UIButton) {
+        let text: String = button.currentTitle!
+        done = text == "Fact"
+        new = true
+        decimal = false
+        op = text
+        //printResult()
         updateInputLabel()
     }
     
@@ -134,11 +147,12 @@ class ViewController: UIViewController, Math {
     func fact(_ num: String) {
         var fact: Int = 1
         var temp = 0
-        if mod(Double(num)!, 1.0) > 0 {
+        if num.index(of: ".") != nil {
             res = "N/A"
         }
         else {
             temp = Int(num)!
+            NSLog(String(temp))
             while temp > 0 {
                 fact = fact * temp
                 temp = temp - 1
@@ -206,6 +220,7 @@ class ViewController: UIViewController, Math {
         nums = []
         new = true
         decimal = false
+        op = ""
     }
     
     func clearResult() {

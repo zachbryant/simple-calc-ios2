@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,14 +14,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="simple_calc_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D1g-hK-FhN">
                                 <rect key="frame" x="312" y="108" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="switchPostFix:" destination="BYZ-38-t0r" eventType="valueChanged" id="USZ-VR-a1C"/>
+                                    <action selector="switchPostFix:" destination="BYZ-38-t0r" eventType="valueChanged" id="trS-Kt-gNx"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enable postfix notation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JFL-RS-5DY">
@@ -71,7 +71,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K85-H4-Kt1"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MTT-xm-MtA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1U-V0-S8N">
@@ -88,7 +88,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u5z-Wx-dcv"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="weI-nA-BlW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWM-MB-oEL">
@@ -105,7 +105,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qj1-U3-ekP"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HRu-O4-6Cd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cch-gi-XB4">
@@ -122,7 +122,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b7T-0f-BnG"/>
+                                    <action selector="clickOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ShS-Ug-LRH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcY-DC-40Z">
@@ -139,7 +139,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TwC-bd-1Qa"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ezt-hl-Ydo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9H-Ey-WwX">
@@ -156,7 +156,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sT2-gg-3jX"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQ2-BM-Rqc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IH-ci-kvp">
@@ -173,7 +173,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g6p-el-Jnb"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIZ-TV-G1x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbs-cS-NkC">
@@ -190,7 +190,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lwR-M2-smY"/>
+                                    <action selector="clickOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hqh-jI-dxI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tp-h6-S8H">
@@ -207,7 +207,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PY0-c2-FQp"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GU2-Tf-FoQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1C-AI-kZB">
@@ -224,7 +224,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WI5-Ef-dUJ"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mn7-x8-FUu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6A-sV-G9K">
@@ -241,7 +241,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Awu-Az-S8H"/>
+                                    <action selector="clickOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="isa-2f-IuL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKQ-Yk-WqC">
@@ -258,7 +258,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VSX-CE-Yzw"/>
+                                    <action selector="clickOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cMk-gF-pV8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbu-Qz-WuY">
@@ -275,7 +275,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XfQ-YM-TsL"/>
+                                    <action selector="clickOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4w0-t7-4wX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpY-o6-eZg">
@@ -292,7 +292,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jxf-N6-Xjw"/>
+                                    <action selector="clickOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbk-ap-WT0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTd-f0-vHh">
@@ -309,7 +309,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vdc-Il-Sej"/>
+                                    <action selector="clickEquals:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UFq-FK-hxm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k94-CM-jNq">
@@ -321,7 +321,7 @@
                                     <color key="titleColor" red="0.96697163917347462" green="1" blue="0.98555043610382487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2V3-Uw-lZS"/>
+                                    <action selector="clickClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zKI-gE-EGx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAg-Zz-D2R">
@@ -338,7 +338,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I1I-eK-gP6"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kG2-EI-Vya"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzO-CS-WFe">
@@ -355,7 +355,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="imQ-Gs-Dif"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VtF-9y-vL1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93l-4v-yLw">
@@ -372,7 +372,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4eI-qC-6bZ"/>
+                                    <action selector="clickNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LCl-oS-rx6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dp1-4h-boe">
@@ -389,7 +389,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xuF-Dg-6oo"/>
+                                    <action selector="clickOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qb7-cD-316"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUw-Dg-T3a">
@@ -406,7 +406,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="performAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lO7-Cc-GIG"/>
+                                    <action selector="clickOperator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="suO-GE-LhU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIL-7v-E59">
