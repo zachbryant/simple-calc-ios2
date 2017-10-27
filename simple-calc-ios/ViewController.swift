@@ -20,10 +20,7 @@ protocol Math {
 }
 
 class ViewController: UIViewController, Math {
-    @IBOutlet weak var postFixSwitch: UISwitch!
     @IBOutlet weak var resLabel: UILabel!
-    @IBOutlet weak var postFixLabel: UILabel!
-    @IBOutlet weak var inputLabel: UILabel!
     var res: String = ""
     var new: Bool = true
     var done: Bool = false
@@ -41,29 +38,22 @@ class ViewController: UIViewController, Math {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func switchPostFix(_ sender: UISwitch) {
-        updateInputLabel()
-    }
-    
     @IBAction func clickEquals(_ button: UIButton) {
         if nums.count > 0 && nums[nums.count - 1].last == "." {
             nums.append(nums.removeLast() + "0")
             decimal = false
-            updateInputLabel()
         }
-        printResult()
+        updateLabel()
         done = true
     }
     
     @IBAction func clickClear(_ button: UIButton) {
-        clearInput()
-        clearResult()
-        done = false
+        clear()
     }
     
     @IBAction func clickNum(_ button: UIButton) {
         if done {
-            clickClear(button)
+            clear()
         }
         let text: String = button.currentTitle!
         if new {
@@ -83,7 +73,7 @@ class ViewController: UIViewController, Math {
         if text == "." {
             decimal = true
         }
-        updateInputLabel()
+        updateLabel()
     }
     
     @IBAction func clickOperator(_ button: UIButton) {
@@ -92,8 +82,7 @@ class ViewController: UIViewController, Math {
         new = true
         decimal = false
         op = text
-        //printResult()
-        updateInputLabel()
+        updateLabel()
     }
     
     func add(_ nums: [String]) {
@@ -172,17 +161,10 @@ class ViewController: UIViewController, Math {
         res = String(nums.count)
     }
     
-    func updateInputLabel() {
+    func updateLabel() {
         var separator: String = ""
-        if postFixSwitch.isOn {
-            postFixLabel.text = op
-            separator = " "
-        }
-        else {
-            postFixLabel.text = ""
-            separator = " " + op + " "
-        }
-        var temp: String = "..."
+        separator = " " + op + " "
+        var temp: String = separator
         if nums.count > 0 {
             temp = nums[0]
             if nums.count > 1 {
@@ -194,38 +176,30 @@ class ViewController: UIViewController, Math {
                 temp = temp + separator
             }
         }
-        inputLabel.text = temp
-    }
-    
-    func printResult() {
         if nums.count > 0 {
             switch op {
-                case "+": add(nums)
-                case "-": sub(nums)
-                case "*": mult(nums)
-                case "/": div(nums)
-                case "Mod": mod(nums)
-                case "Count": count(nums)
-                case "Avg": avg(nums)
-                case "Fact": fact(nums[0])
-                default: res = "0"
+            case "+": add(nums)
+            case "-": sub(nums)
+            case "*": mult(nums)
+            case "/": div(nums)
+            case "Mod": mod(nums)
+            case "Count": count(nums)
+            case "Avg": avg(nums)
+            case "Fact": fact(nums[0])
+            default: res = "0"
             }
         }
-        resLabel.text = res
+        resLabel.text = temp + "\n=" + res
     }
     
-    func clearInput() {
-        inputLabel.text = ""
-        postFixLabel.text = ""
+    func clear() {
         nums = []
         new = true
         decimal = false
+        done = false
         op = ""
-    }
-    
-    func clearResult() {
         res = "0"
-        printResult()
+        updateLabel()
     }
     
 }
