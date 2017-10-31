@@ -26,16 +26,34 @@ class ViewController: UIViewController, Math {
     var done: Bool = false
     var decimal: Bool = false
     var nums: [String] = []
+    var history: [String] = []
     var op = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateLabel()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+ 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier! {
+            case "historySegue":
+                let historyVC = segue.destination as! HistoryViewController
+                historyVC.entries = history
+                historyVC.new = new
+                historyVC.done = done
+                historyVC.decimal = decimal
+                historyVC.nums = nums
+                historyVC.op = op
+                historyVC.res = res
+            default:
+                NSLog("%s is an unknown segue", segue.identifier!)
+        }
     }
     
     @IBAction func clickEquals(_ button: UIButton) {
@@ -45,6 +63,9 @@ class ViewController: UIViewController, Math {
         }
         updateLabel()
         done = true
+        if nums.count > 1 {
+            history.append(resLabel.text!)
+        }
     }
     
     @IBAction func clickClear(_ button: UIButton) {
